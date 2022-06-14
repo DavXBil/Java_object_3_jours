@@ -1,4 +1,4 @@
-package editeur;
+package TP1.editeur;
 
 public class testLivre {
 

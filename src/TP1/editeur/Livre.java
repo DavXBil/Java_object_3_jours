@@ -1,4 +1,4 @@
-package editeur;
+package TP1.editeur;
 
 public class Livre {
 
@@ -94,13 +94,14 @@ public class Livre {
 
     @Override
     public String toString() {
-        return "Livre{" +
-                "titre='" + titre + '\'' +
-                ", auteur='" + auteur + '\'' +
-                ", prix=" + prix +
-                ", nb_pages=" + nb_pages +
-                ", isbn='" + isbn + '\'' +
-                ", annee=" + annee +
-                '}';
+        final StringBuilder sb = new StringBuilder("Livre{");
+        sb.append("titre='").append(titre).append('\'');
+        sb.append(", auteur='").append(auteur).append('\'');
+        sb.append(", prix=").append(prix);
+        sb.append(", nb_pages=").append(nb_pages);
+        sb.append(", isbn='").append(isbn).append('\'');
+        sb.append(", annee=").append(annee);
+        sb.append('}');
+        return sb.toString();
     }
 }
