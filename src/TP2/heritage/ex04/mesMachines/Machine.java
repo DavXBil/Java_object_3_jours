@@ -1,7 +1,7 @@
-package mesMachines;
+package TP2.heritage.ex04.mesMachines;
 
 import java.time.LocalDate;
-importjava.time.temporal.ChronoUnit;
+import java.time.temporal.ChronoUnit;
 
 public class Machine {
     private LocalDate dateAchat;
@@ -25,7 +25,7 @@ public class Machine {
 
     @Override
     public String toString() {
-        longage = getAge();
+        long age = getAge();
         return marque+" "+modele+" ("+age+" an"+(age>1?"s":"")+")";
     }
 }
