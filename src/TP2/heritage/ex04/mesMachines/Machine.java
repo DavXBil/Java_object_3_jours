@@ -16,7 +16,6 @@ public class Machine {
     public long getAge() {
         return ChronoUnit.YEARS.between(dateAchat, LocalDate.now());
     }
-
     /**
      *
      *  {@inheritDoc}

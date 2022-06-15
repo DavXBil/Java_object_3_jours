@@ -5,7 +5,7 @@ public class Salarie extends Individu {
 
     public Salarie(String prenom, String nom, int salaire) {
         super(prenom, nom);
-        this.salaire = salaire;
+        setSalaire(salaire);
     }
 
     @Override
@@ -14,10 +14,12 @@ public class Salarie extends Individu {
     }
 
     public int getSalaire() {
+
         return salaire;
     }
 
     public void setSalaire(int salaire) {
+
         this.salaire = salaire;
     }
 }
