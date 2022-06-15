@@ -14,6 +14,7 @@ public class Intervenant {
         return tauxHoraire;
     }
 
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Intervenant{");

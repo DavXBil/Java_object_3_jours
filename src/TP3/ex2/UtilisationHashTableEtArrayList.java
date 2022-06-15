@@ -1,32 +1,26 @@
 package TP3.ex2;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Hashtable;
+
 
 public class UtilisationHashTableEtArrayList {
 
     public static void main(String[] args) {
-        System.out.println("*** Hashtable ***");
-        ArrayList<String> al = new ArrayList<String>();
-        al.add("mot");
-        al.add("automne");
-        al.add("belle journée");
-        System.out.println("Affichage de l'ensemble des valeurs :");
-        for(String e : al) {
-            System.out.println(e);
-        }
-        System.out.println("*** Hashtable ***");
-        Hashtable<Integer, String> ht = new Hashtable<Integer, String>();
-        ht.put(12, "automne");
-        ht.put(145, "mot");
-        ht.put(788, "belle journée");
-        ht.put(12, "hiver");
-//Remplace la valeur précédente car il y a déjà une clé 12
-        System.out.println("valeur associé à la clé '12' dans la hashtable : " + ht.get(12));
-        System.out.println("Affichage de l'ensemble des valeurs :");
-        for(String e : ht.values()) {
-            System.out.println(e);
-        }
+        Intervenant am= new Intervenant("Martineau",888.80f);
+        Intervenant gb= new Intervenant("Block",2.18f);
+        Mission mission=new Mission("Prog objet","C'est un truc de fou",35, am);
+        mission.ajoutReleve(LocalDate.of(2015, 12,5),3);
+        mission.ajoutReleve(LocalDate.of(2015, 12,6),20);
+        mission.ajoutReleve(LocalDate.of(2015, 12,7),18);
+        Mission mission2=new Mission("Javascript","C'est un truc de fou",35, gb);
+        mission2.ajoutReleve(LocalDate.of(2015, 12,15),30);
+        mission2.ajoutReleve(LocalDate.of(2015, 12,16),18);
+        mission2.ajoutReleve(LocalDate.of(2015, 12,17),12);
+        ArrayList<Mission> tabMissions = new ArrayList<Mission>();
+        tabMissions.add(mission);
+        tabMissions.add(mission2);
+        Projet formationDl=new Projet("Formation DL",LocalDate.of(2015, 5, 12), LocalDate.of(2015, 12,17),38000,tabMissions);
+        System.out.println("La marge brute courante du projet est de :"+formationDl.margeBruteCourante()+"€");
     }
-
 }

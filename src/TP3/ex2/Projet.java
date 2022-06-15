@@ -1,19 +1,20 @@
 package TP3.ex2;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Projet {
 
     private String nom;
-    private Date debut;
-    private Date fin;
+    private LocalDate debut;
+    private LocalDate fin;
     private float prixFactureMO;
     private ArrayList<Mission> missions = new ArrayList<>();
 
 
 
-    public Projet(String nom, Date debut, Date fin, float prixFactureMO, ArrayList<Mission> missions) {
+    public Projet(String nom, LocalDate debut, LocalDate fin, float prixFactureMO, ArrayList<Mission> missions) {
         this.nom = nom;
         this.debut = debut;
         this.fin = fin;
@@ -22,10 +23,9 @@ public class Projet {
     }
 
     public double cumulCoutMO() {
-        Intervenant intervenant = new Intervenant("test", 11);
         double cout = 0;
         for (Mission mission : missions) {
-            cout += intervenant.getTauxHoraire() * mission.getNbrHeureEffectues();
+            cout += mission.getExecutant().getTauxHoraire() * mission.getNbrHeureEffectues();
         }
         return cout;
     }
@@ -43,19 +43,19 @@ public class Projet {
         this.nom = nom;
     }
 
-    public Date getDebut() {
+    public LocalDate getDebut() {
         return debut;
     }
 
-    public void setDebut(Date debut) {
+    public void setDebut(LocalDate debut) {
         this.debut = debut;
     }
 
-    public Date getFin() {
+    public LocalDate getFin() {
         return fin;
     }
 
-    public void setFin(Date fin) {
+    public void setFin(LocalDate fin) {
         this.fin = fin;
     }
 

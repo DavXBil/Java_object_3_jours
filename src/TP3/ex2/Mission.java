@@ -12,11 +12,10 @@ public class Mission {
     private Hashtable<LocalDate, Integer> releveHoraire = new Hashtable<LocalDate, Integer>();
     private Intervenant intervenant;
 
-    public Mission(String nom, String description, int nbHeuresPrevues, Hashtable releveHoraire) {
+    public Mission(String nom, String description, int nbHeuresPrevues, Intervenant intervenant) {
         this.nom = nom;
         this.description = description;
         this.nbrHeurePrevues = nbHeuresPrevues;
-        this.releveHoraire = releveHoraire;
         this.intervenant = intervenant;
     }
 
