@@ -84,12 +84,40 @@ public class TestFormes {
 
         } while (!isOver);
 
-        for (Forme forme: formes) {
-            System.out.println(forme);
-            System.out.println("Aire =" + forme.calculAire());
+        System.out.println("Que voulez vos calculer?");
+        System.out.println("1 - Aire?");
+        System.out.println("2 - Périmètre?");
+        System.out.println("3 - les deux?");
 
+        int calculInput = scan.nextInt();
+
+        switch (calculInput) {
+
+            case 1:
+
+                for (Forme forme: formes) {
+                    System.out.println(forme);
+                    System.out.println("Aire = " + forme.calculAire());
+                }
+
+                break;
+
+            case 2:
+                for (Forme forme: formes) {
+                    System.out.println(forme);
+                    System.out.println("Perimetre = " + forme.calculPerimetre());
+                }
+
+
+            case 3:
+                for (Forme forme: formes) {
+                    System.out.println(forme);
+                    System.out.println("Aire = " + forme.calculAire());
+                    System.out.println("Perimetre = " + forme.calculPerimetre());
+                }
         }
 
     }
+
 
 }
